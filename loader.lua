@@ -1,20 +1,23 @@
-local HttpService = game:GetService("HttpService")
-local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
+-- KAS SIMPLE LOADER
 
-local KEY = getgenv().KEY
-if not KEY then
-    game.Players.LocalPlayer:Kick("No key provided")
-end
+local KEY = getgenv().KAS_KEY or "NONE"
 
-local API = "https://kas-key-mrdlfubmg-abeerqwdqs-projects.vercel.app/api/check"
-local url = API.."?key="..KEY.."&hwid="..HWID
+local hwid = game:GetService("RbxAnalyticsService"):GetClientId()
+
+local url = "https://kas-key-mrdlfubmg-abeerqwdqs-projects.vercel.app/api/check"
+    .. "?key=" .. KEY
+    .. "&hwid=" .. hwid
 
 local res = game:HttpGet(url)
-local data = HttpService:JSONDecode(res)
+local data = game:GetService("HttpService"):JSONDecode(res)
 
-if data.status == "ok" then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/abeerqwdq/kathub/refs/heads/main/main.lua"))()
-else
-    game.Players.LocalPlayer:Kick(data.msg or "Access denied")
+if data.status ~= "ok" then
+    warn("Invalid key")
+    return
 end
 
+if data.admin then
+    print("we making it out fr 😈")
+end
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/abeerqwdq/kathub/main/main.lua"))()
