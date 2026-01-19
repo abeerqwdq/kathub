@@ -1,1 +1,19 @@
+-- Whitelist Configuration
+local WhitelistModule = {}
 
+WhitelistModule.Users = {
+    "Sowehsow",
+    "soweh1",
+    "Player3",
+}
+
+function WhitelistModule:IsWhitelisted(username)
+    for _, whitelistedUser in ipairs(self.Users) do
+        if username == whitelistedUser then
+            return true
+        end
+    end
+    return false
+end
+
+return WhitelistModule
