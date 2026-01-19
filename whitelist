@@ -4,7 +4,7 @@ local WhitelistModule = {}
 WhitelistModule.Users = {
     "Sowehsow",
     "soweh1",
-    "Player3",
+    "5starforme8",
 }
 
 function WhitelistModule:IsWhitelisted(username)
