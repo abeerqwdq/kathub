@@ -3,7 +3,7 @@ local WhitelistModule = {}
 
 WhitelistModule.Users = {
     "Sowehsow",
-    "soweh1r",
+    "soweh1",
     "Player3",
 }
 
