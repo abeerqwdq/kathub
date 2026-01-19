@@ -5,6 +5,7 @@ WhitelistModule.Users = {
     "Sowehsow",
     "soweh1",
     "5starforme8",
+    "bastianbear2013",
 }
 
 function WhitelistModule:IsWhitelisted(username)
