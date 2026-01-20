@@ -1,19 +1,61 @@
--- Whitelist Configuration
+-- Whitelist Configuration - Organized by Script
 local WhitelistModule = {}
 
-WhitelistModule.Users = {
-    "Gen5witabonit",
-    "soweh1",
-    "5starforme8",
-    "bastianbear2013",
+-- KATSPAM Users
+WhitelistModule.katspam = {
+    "Sowehsow",
+    "soweh1r",
+    "Player3",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
 }
 
-function WhitelistModule:IsWhitelisted(username)
-    for _, whitelistedUser in ipairs(self.Users) do
-        if username == whitelistedUser then
+-- KATHIT Users
+WhitelistModule.kathit = {
+    "Sowehsow",
+    "Player3",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+}
+
+-- Script 3 Users
+WhitelistModule.script3 = {
+    "Sowehsow",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+}
+
+function WhitelistModule:IsWhitelisted(username, scriptName)
+    local scriptUsers = self[scriptName]
+    
+    if not scriptUsers then
+        return false  -- Script doesn't exist
+    end
+    
+    for _, whitelistedUser in ipairs(scriptUsers) do
+        if whitelistedUser ~= "" and username == whitelistedUser then
             return true
         end
     end
+    
     return false
 end
 
