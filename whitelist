@@ -4,7 +4,7 @@ local WhitelistModule = {}
 -- KATSPAM Users
 WhitelistModule.katspam = {
     "Sowehsow",
-    "soweh1r",
+    "soweh1",
     "Player3",
     "",
     "",
@@ -18,7 +18,7 @@ WhitelistModule.katspam = {
 -- KATHIT Users
 WhitelistModule.kathit = {
     "Sowehsow",
-    "Player3",
+    "soweh1",
     "",
     "",
     "",
