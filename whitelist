@@ -8,6 +8,7 @@ WhitelistModule.Users = {
     "bastianbear2013",
     "Tozinitx291",
     "jaydengeo13",
+    "1234567ue5",
 }
 
 function WhitelistModule:IsWhitelisted(username)
